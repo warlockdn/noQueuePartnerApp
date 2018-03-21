@@ -1,3 +1,9 @@
 page-delivered {
 
+    ion-item {
+        .item-inner {
+            border-bottom-width: 0 !important;
+        }
+    }
+
 }

@@ -8,17 +8,20 @@ page-delivered-detail {
     }
 
     ion-list {
-        ion-label {
-            margin: 0 !important;
-            ion-grid.grid {
-                padding: 0;
-                ion-col {
+        .item-inner {
+            border-bottom-width: 0 !important;
+            ion-label {
+                margin: 0 !important;
+                ion-grid.grid {
                     padding: 0;
-                    font-size: 1.4rem;
-                }
-                ion-col.quantity {
-                    color: map-get($map: $colors, $key: secondary);
-                    text-align: right;
+                    ion-col {
+                        padding: 0;
+                        font-size: 1.4rem;
+                    }
+                    ion-col.quantity {
+                        color: map-get($map: $colors, $key: secondary);
+                        text-align: right;
+                    }
                 }
             }
         }

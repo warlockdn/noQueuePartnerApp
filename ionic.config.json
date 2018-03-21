@@ -1,6 +1,6 @@
 {
   "name": "partnerApp",
-  "app_id": "dbf1ae75",
+  "app_id": "5a9ced1b",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
