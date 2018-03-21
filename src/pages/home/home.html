@@ -1,14 +1,17 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<ion-header no-shadow no-border>
+  <ion-navbar color="red">    
+    <ion-title>{{ common.title }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="toolbar-icon" color="white" (click)="logout()" style="font-size: 1.2rem;">
+        <ion-icon name="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content no-bounce>
+  <ion-tabs scrollTabs placement="top" color="red">
+    <ion-tab [root]="page1" tabTitle="New Orders" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+    <ion-tab [root]="page2" tabTitle="In Process" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+    <ion-tab [root]="page3" tabTitle="Delivered" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+  </ion-tabs>
 </ion-content>

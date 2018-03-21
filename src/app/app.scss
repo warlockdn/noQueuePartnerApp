@@ -14,3 +14,169 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Helper Tags
+[font-bold] {
+    font-weight: 700;
+}
+
+.toolbar-title-md {
+    font-weight: 600;
+}
+
+[ion-button] {
+    box-shadow: none !important;
+    height: 4.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.tabs-md .tab-button {
+    min-height: 4.5rem;
+}
+
+ion-badge {
+    padding: 3px 5px;
+    font-size: 1rem;
+    background-color: #a24841 !important;
+}
+
+.tab-badge {    
+    top: 0%;
+    padding: 1px 5px;
+    line-height: 14px;
+}
+
+.has-title-only .tab-button-text {
+    position: relative;
+    top: 3px;
+    font-weight: 600;
+}
+
+.tabs-md .tab-button {
+    border-bottom: 2px solid transparent;
+    transition: 0.3s all ease;
+}
+
+.tabs-md-red .tab-button:hover:not(.disable-hover), 
+.tabs-md-red .tab-button[aria-selected=true], 
+.tabs-md-red .tab-button[aria-selected=true] .tab-button-icon {
+    border-bottom: 2px solid #fff;
+}
+
+// Customized List Items
+ion-list {
+    ion-item-sliding {
+        border-bottom: 1px solid #ebebeb;
+        ion-item.item-md {
+            ion-avatar {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                span.red {
+                    color: map-get($map: $colors, $key: red);
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+            }
+
+            ion-avatar.with-icon {
+                text-align: center;
+                justify-content: center;
+                ion-icon {
+                    font-size: 2.6rem;
+                    color: rgba(96, 96, 96, 0.60)
+                }
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-bottom: 0.4rem;
+            }
+            h4 {
+                font-size: 1.4rem;
+                color: #414141;
+                ion-icon {
+                    margin-right: 0.5rem;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+            .price {
+                font-size: 1.4rem;
+                margin-bottom: 0.2rem;
+                font-weight: 700;
+                span {
+                    color: map-get($map: $colors, $key: secondary);
+                    font-weight: 700;
+                    padding-left: 2px;
+                    font-size: 1.2rem;
+                }
+            }
+            .time {
+                color: #747474;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+ion-list {
+    ion-item.item-md {
+        border-bottom: 1px solid #ebebeb;
+        ion-avatar {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            span.red {
+                color: map-get($map: $colors, $key: red);
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+
+        ion-avatar.with-icon {
+            text-align: center;
+            justify-content: center;
+            ion-icon {
+                font-size: 2.6rem;
+                color: rgba(96, 96, 96, 0.60)
+            }
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+            color: #414141;
+            ion-icon {
+                margin-right: 0.5rem;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .price {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+            font-weight: 700;
+            span {
+                color: map-get($map: $colors, $key: secondary);
+                font-weight: 700;
+                padding-left: 2px;
+                font-size: 1.2rem;
+            }
+        }
+        .time {
+            color: #747474;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+}

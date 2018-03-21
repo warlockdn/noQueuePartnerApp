@@ -1,0 +1,28 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <ion-list>
+    <ion-item (click)="openOrderDetails()" *ngFor="let list of lists">
+      <ion-avatar class="with-icon" item-start>
+        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+      </ion-avatar>
+      <h2>#OD2058996</h2>
+      <h4>
+        <ion-icon name="ios-person"></ion-icon> John Doe</h4>
+      <div item-end>
+        <div class="price">
+          Rs. 352.69
+          <span>PAID</span>
+        </div>
+        <div text-right class="time">
+          12.06 hrs
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

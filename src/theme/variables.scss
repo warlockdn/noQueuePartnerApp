@@ -22,8 +22,7 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
-
+$font-family-base: 'Nunito', sans-serif;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -34,11 +33,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #41A2E3,
+  secondary:  #3DDF82,
+  danger:     #DC5D54,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  red:      #DC5D54,
+  white:    #fff
 );
 
 
@@ -46,14 +47,14 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$font-family-ios-base: 'Nunito', sans-serif;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$font-family-md-base: 'Nunito', sans-serif;
 
 
 // App Windows Variables

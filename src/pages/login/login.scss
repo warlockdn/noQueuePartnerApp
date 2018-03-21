@@ -1,0 +1,51 @@
+page-login {
+
+    ion-content {
+        top: 10%;
+    }
+
+    .logo {
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+        img {
+            width: 40%;
+        }
+    }
+
+    // .list-md .item-input:last-child {
+    //     border-bottom: 0;
+    // }
+
+    .list-md[inset] {
+        margin: 26px;
+    }
+
+    .list-md[inset] .item-input {
+        margin-bottom: 1rem;
+    }
+
+    .list-md[inset] .item:last-child {
+        border-bottom-width: 1px;
+    }
+
+    .label-md[stacked], .label-ios[stacked] {
+        font-size: 2rem;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .item-label-stacked .text-input-md {
+        font-size: 0.8rem;
+        font-size: 1.4rem;
+    }
+
+    button.toolbar-icon {
+        font-size: 1.2rem;
+    }
+
+    [ion-button] {
+        margin-top: 4rem;
+    }
+
+}

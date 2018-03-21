@@ -1,0 +1,36 @@
+page-order-detail {
+
+    h3.title {
+        font-size: 1.4rem;
+        color: #979797;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    ion-list {
+        ion-label {
+            margin: 0 !important;
+            ion-grid.grid {
+                padding: 0;
+                ion-col {
+                    padding: 0;
+                    font-size: 1.4rem;
+                }
+                ion-col.quantity {
+                    color: map-get($map: $colors, $key: secondary);
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    ion-footer {
+        ion-toolbar.toolbar-md {
+            min-height: 0;
+            button[ion-button] {
+                border-radius: 0;
+            }
+        }
+    }
+
+}
