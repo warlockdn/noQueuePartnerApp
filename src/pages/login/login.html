@@ -11,20 +11,19 @@
     <img src="../../assets/partnerLogo.png">
   </div>
   
-  <ion-list inset>
-    
-    <ion-item>
-      <ion-label stacked>User ID</ion-label>
-      <ion-input type="text" placeholder="Enter User ID" autocomplete="false" autocomplete="off"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input type="password" placeholder="Enter your Password" autocomplete="off"></ion-input>
-    </ion-item>  
-
-    <button ion-button block (click)="login()">LOGIN</button>
-
-  </ion-list>
+  <form (ngSubmit)="login()">
+    <ion-list inset [formGroup]="loginForm">
+      <ion-item>
+        <ion-label stacked>User ID</ion-label>
+        <ion-input type="number" placeholder="Enter User ID" autocomplete="false" autocomplete="off" formControlName="userID"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password" placeholder="Enter your Password" autocomplete="off" formControlName="password"></ion-input>
+      </ion-item>
+      <button ion-button block (click)="login()">LOGIN</button>
+    </ion-list>
+  </form>
   
 
 

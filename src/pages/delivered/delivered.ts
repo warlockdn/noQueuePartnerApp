@@ -5,6 +5,8 @@ import { ModalController } from 'ionic-angular';
 import { CommonProvider } from '../../providers/common/common';
 import { DeliveredDetailPage } from '../delivered-detail/delivered-detail';
 
+import { OrderProvider } from '../../providers/order/order';
+
 /**
  * Generated class for the DeliveredPage page.
  *
@@ -21,7 +23,7 @@ export class DeliveredPage {
 
   lists: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider) {  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider, public orderProvider: OrderProvider) {  
     this.lists = this.lists.reverse()
   }
 

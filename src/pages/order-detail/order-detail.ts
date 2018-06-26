@@ -16,15 +16,13 @@ import { ViewController } from 'ionic-angular';
 })
 export class OrderDetailPage {
 
-  inProcess: boolean = false;
-  delivered: boolean = false;
+  order: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     
-    this.inProcess = navParams.get('inProcess');
-    this.delivered = navParams.get('delivered');
+    this.order = navParams.get("data");
 
-    console.log(this.delivered);
+    console.log(this.order);
 
   }
 

@@ -7,6 +7,7 @@ import { DeliveredPage } from '../delivered/delivered';
 
 import { CommonProvider } from '../../providers/common/common';
 import { LoginPage } from '../login/login';
+import { OrderProvider } from '../../providers/order/order';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,7 @@ export class HomePage {
   page2: any = InProcessPage;
   page3: any = DeliveredPage;
 
-  constructor(public navCtrl: NavController, public common: CommonProvider) {
+  constructor(public navCtrl: NavController, public common: CommonProvider, public orderProvider: OrderProvider) {
   }
 
   onTabSelect(tab: { index: number; id: string; }) {

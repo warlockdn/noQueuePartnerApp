@@ -6,21 +6,21 @@
     
 
   <ion-list>
-    <ion-item-sliding *ngFor="let list of lists">
-      <ion-item no-lines (click)="openOrderDetails()">
+    <ion-item-sliding *ngFor="let order of orderProvider.inProcessOrders | async">
+      <ion-item no-lines (click)="openOrderDetails(order)">
         <ion-avatar class="with-icon" item-start>
           <ion-icon name="md-time"></ion-icon>
         </ion-avatar>
-        <h2>#OD2058996</h2>
+        <h2>#{{ order.id }}</h2>
         <h4>
           <ion-icon name="ios-person"></ion-icon> John Doe</h4>
         <div item-end>
           <div class="price">
-            Rs. 352.69
+            Rs. {{ order.total }}
             <span>PAID</span>
           </div>
           <div text-right class="time">
-            12.06 hrs
+            {{ order.updatedOn | date:"h:mm a" }}
           </div>
 
         </div>

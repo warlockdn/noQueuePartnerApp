@@ -5,6 +5,8 @@ import { ModalController } from 'ionic-angular';
 import { CommonProvider } from '../../providers/common/common';
 import { OrderDetailPage } from '../order-detail/order-detail';
 
+import { OrderProvider } from '../../providers/order/order';
+
 /**
  * Generated class for the InProcessPage page.
  *
@@ -19,11 +21,7 @@ import { OrderDetailPage } from '../order-detail/order-detail';
 })
 export class InProcessPage {
 
-  lists: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider) {
-    this.lists = this.lists.reverse()
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider, public orderProvider: OrderProvider) {}
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -38,9 +36,10 @@ export class InProcessPage {
     console.log('ionViewDidLoad InProcessPage');
   }
 
-  openOrderDetails() {
-    const orderDetails = { inProcess: true, delivered: false };
-    const modal = this.modalCtrl.create(OrderDetailPage, orderDetails);
+  openOrderDetails(order) {
+    const modal = this.modalCtrl.create(OrderDetailPage, {
+      data: order
+    });
     modal.present();
   }
 
