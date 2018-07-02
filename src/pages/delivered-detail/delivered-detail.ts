@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 })
 export class DeliveredDetailPage {
 
+  order: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
+    this.order = navParams.get("data");
   }
 
   ionViewDidLoad() {

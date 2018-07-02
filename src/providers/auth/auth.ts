@@ -50,6 +50,10 @@ export class AuthProvider {
     });
   }
 
+  logout() {
+    return this.storage.clear()
+  }
+
   authenticate(user): Observable<any> {
     return this.http.post(ConstantsProvider.auth, {
       username: user.username,

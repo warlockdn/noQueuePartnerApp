@@ -1,10 +1,5 @@
 <ion-content>
 
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
-
   <ion-list>
     <ion-item (click)="openOrderDetails(order)" *ngFor="let order of orderProvider.deliveredOrders | async">
       <ion-avatar class="with-icon" item-start>
@@ -15,7 +10,7 @@
         <ion-icon name="ios-person"></ion-icon> John Doe</h4>
       <div item-end>
         <div class="price">
-          Rs. {{ order.total }}
+          Rs. {{ order.total / 100 }}
           <span>PAID</span>
         </div>
         <div text-right class="time">

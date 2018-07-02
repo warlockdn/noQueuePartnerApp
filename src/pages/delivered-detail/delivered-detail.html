@@ -6,7 +6,7 @@
 -->
 <ion-header no-shadow no-border>
   <ion-navbar color="red">    
-    <ion-title>#OD2055785</ion-title>    
+    <ion-title>#{{ order.id }}</ion-title>    
     <ion-buttons end>
       <button ion-button (click)="dismiss()">
         <ion-icon name="md-close"></ion-icon>
@@ -32,7 +32,7 @@
       <ion-grid>
         <ion-row>
           <ion-col>Order ID</ion-col>
-          <ion-col font-bold>#OD2055785</ion-col>
+          <ion-col font-bold>#{{ order.id }}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
@@ -40,7 +40,7 @@
       <ion-grid>
         <ion-row>
           <ion-col>Order Time</ion-col>
-          <ion-col font-bold>12:12:26 Thu Feb 08 2018</ion-col>
+          <ion-col font-bold>{{ order.updatedOn | date:"M/d/yy, h:mm a" }}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
@@ -48,16 +48,23 @@
 
   <h3 class="title">Order Summary</h3>
   <ion-list no-lines font-bold>
-    <ion-item>
+    <ion-item *ngFor="let item of order.cart">
       <ion-grid>
         <ion-row>
-          <ion-col col-8>Chicken Burger</ion-col>
-          <ion-col col-2 font-bold class="quantity">2</ion-col>
-          <ion-col col-2 font-bold text-right>320</ion-col>
+          <ion-col col-8>{{ item.name }}</ion-col>
+          <ion-col col-2 font-bold class="quantity">{{ item.quantity }}</ion-col>
+          <ion-col col-2 font-bold text-right>{{ item.price }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 *ngFor="let extra of item.extras">
+            <div class="extras">
+              <strong>{{ extra.name }}</strong> - <span *ngFor="let choice of extra.choices">{{ choice.name }}, </span>
+            </div>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-grid>
         <ion-row>
           <ion-col col-8>Crispy Fries</ion-col>
@@ -74,31 +81,31 @@
           <ion-col col-2 font-bold text-right>120</ion-col>
         </ion-row>
       </ion-grid>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
 
   <ion-list>
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col col-10>Item Total</ion-col>
-          <ion-col col-2 font-bold text-right>Rs. 590</ion-col>
+          <ion-col col-9>Item Total</ion-col>
+          <ion-col col-3 font-bold text-right>Rs. {{ order.total / 100 }}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col col-10>Tax</ion-col>
-          <ion-col col-2 font-bold text-right>Rs. 45</ion-col>
+          <ion-col col-9>Tax</ion-col>
+          <ion-col col-3 font-bold text-right>Rs. 0</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col col-10 font-bold>Total</ion-col>
-          <ion-col col-2 font-bold text-right>Rs. 690</ion-col>
+          <ion-col col-9 font-bold>Total</ion-col>
+          <ion-col col-3 font-bold text-right>Rs. {{ order.total / 100 }}</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>

@@ -55,6 +55,13 @@
           <ion-col col-2 font-bold class="quantity">{{ item.quantity }}</ion-col>
           <ion-col col-2 font-bold text-right>{{ item.price }}</ion-col>
         </ion-row>
+        <ion-row>
+          <ion-col col-12 *ngFor="let extra of item.extras">
+            <div class="extras">
+              <strong>{{ extra.name }}</strong> - <span *ngFor="let choice of extra.choices">{{ choice.name }}, </span>
+            </div>
+          </ion-col>
+        </ion-row>
       </ion-grid>
     </ion-item>
     <!-- <ion-item>
@@ -111,19 +118,19 @@
     <ion-grid no-padding>
       <ion-row *ngIf="!inProcess">
         <ion-col no-padding>
-          <button no-margin block ion-button color="secondary" (click)="dismiss()">
+          <button no-margin block ion-button color="secondary" (click)="accept()">
             Accept
           </button>
         </ion-col>
         <ion-col no-padding>
-          <button no-margin block ion-button color="red" (click)="dismiss()">
+          <button no-margin block ion-button color="red" (click)="decline()">
             Decline
           </button>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="inProcess">
         <ion-col no-padding>
-          <button no-margin block ion-button color="secondary" (click)="dismiss()">
+          <button no-margin block ion-button color="secondary" (click)="ready()">
             Ready
           </button>
         </ion-col>

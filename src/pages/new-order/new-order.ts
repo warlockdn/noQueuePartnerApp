@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ModalController } from 'ionic-angular';
+import { ModalController, LoadingController, AlertController } from 'ionic-angular';
 
 import { OrderDetailPage } from '../order-detail/order-detail';
 import { OrderProvider } from '../../providers/order/order';
@@ -20,22 +20,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NewOrderPage {
 
-  lists: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  pendingOrders: Observable<any>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public orderProvider: OrderProvider) {
-    // this.lists = this.lists.reverse();
-    
-    /* this.pendingOrders = this.orderProvider.getOrderPending();
-
-    this.pendingOrders.toPromise().then((orders) => {
-      this.orderProvider.pendingOrderCount = orders.length;
-    }) */
-
-    // this.items.forEach((item) => {
-    //   console.log("Item:", item);
-    // })
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public orderProvider: OrderProvider, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewOrderPage');
@@ -52,9 +37,54 @@ export class NewOrderPage {
 
   openOrderDetails(order) {
     const modal = this.modalCtrl.create(OrderDetailPage, {
-      data: order
+      data: order,
+      inProcess: false
+      
     });
     modal.present();
+  }
+
+  accept(order) {
+
+    const loader = this.loadingCtrl.create({
+      content: "Accepting Order. Please Wait..."
+    });
+
+    loader.present();
+
+    this.orderProvider.updateOrderStatus(order.docid, order.id, "ACCEPTED").subscribe(
+      response => {
+        loader.dismiss();
+      }, err => {
+
+      }
+    )
+
+  }
+
+  decline(order) {
+
+    const loader = this.loadingCtrl.create({
+      content: "Declining Order. Please Wait..."
+    });
+
+    loader.present();
+
+    this.orderProvider.updateOrderStatus(order.docid, order.id, "DECLINED").subscribe(
+      response => {
+        loader.dismiss();
+      }, err => {
+
+        loader.dismiss();
+        const alert = this.alertCtrl.create({
+          title: "Error!",
+          message: "Error declining order",
+          buttons: ['OK']
+        })
+
+      }
+    )
+
   }
 
 }

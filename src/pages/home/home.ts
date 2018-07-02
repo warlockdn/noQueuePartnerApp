@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 
 import { NewOrderPage } from '../new-order/new-order';
 import { InProcessPage } from '../in-process/in-process';
 import { DeliveredPage } from '../delivered/delivered';
 
 import { CommonProvider } from '../../providers/common/common';
+import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import { OrderProvider } from '../../providers/order/order';
 
@@ -19,7 +20,7 @@ export class HomePage {
   page2: any = InProcessPage;
   page3: any = DeliveredPage;
 
-  constructor(public navCtrl: NavController, public common: CommonProvider, public orderProvider: OrderProvider) {
+  constructor(public navCtrl: NavController, public common: CommonProvider, public orderProvider: OrderProvider, public authProvider: AuthProvider, public loadingCtrl: LoadingController) {
   }
 
   onTabSelect(tab: { index: number; id: string; }) {
@@ -27,7 +28,17 @@ export class HomePage {
   }
 
   logout() {
-    this.navCtrl.setRoot(LoginPage);
+
+    const loader = this.loadingCtrl.create({
+      content: "Logging out. Please wait..."
+    })
+
+    this.authProvider.logout().then(
+      success => {
+        loader.dismiss();
+        this.navCtrl.setRoot(LoginPage);
+      }
+    )
   }
 
 }

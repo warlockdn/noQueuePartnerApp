@@ -21,10 +21,7 @@ import { OrderProvider } from '../../providers/order/order';
 })
 export class DeliveredPage {
 
-  lists: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider, public orderProvider: OrderProvider) {  
-    this.lists = this.lists.reverse()
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, public common: CommonProvider, public orderProvider: OrderProvider) {
   }
 
   doRefresh(refresher) {
@@ -40,8 +37,10 @@ export class DeliveredPage {
     console.log('ionViewDidLoad DeliveredPage');
   }
 
-  openOrderDetails() {
-    const modal = this.modalCtrl.create(DeliveredDetailPage);
+  openOrderDetails(order) {
+    const modal = this.modalCtrl.create(DeliveredDetailPage, {
+      data: order
+    });
     modal.present();
   }
 

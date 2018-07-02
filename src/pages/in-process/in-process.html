@@ -16,7 +16,7 @@
           <ion-icon name="ios-person"></ion-icon> John Doe</h4>
         <div item-end>
           <div class="price">
-            Rs. {{ order.total }}
+            Rs. {{ order.total / 100 }}
             <span>PAID</span>
           </div>
           <div text-right class="time">
@@ -27,13 +27,13 @@
       </ion-item>
 
       <ion-item-options side="left">
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" (click)="ready(order)">
           <ion-icon name="md-checkmark-circle-outline"></ion-icon>
           Ready
         </button>
       </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button color="secondary">
+        <button ion-button color="secondary" (click)="ready(order)">
           <ion-icon name="md-checkmark-circle-outline"></ion-icon>
           Ready
         </button>        
