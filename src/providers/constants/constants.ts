@@ -14,8 +14,8 @@ export class ConstantsProvider {
   // public static auth = "http://localhost:3003/p1/auth/login";
   // public static order = "http://localhost:3003/p1/orders";
 
-  public static auth = "http://192.168.31.190:3003/p1/auth/login";
-  public static order = "http://192.168.31.190:3003/p1/orders";
+  public static auth = "https://cs.spazefood.xyz/p1/auth/login";
+  public static order = "https://cs.spazefood.xyz/p1/orders";
 
   public token = null;
 
