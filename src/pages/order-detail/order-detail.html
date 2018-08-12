@@ -28,6 +28,14 @@
         </ion-row>
       </ion-grid>
     </ion-item>
+    <ion-item *ngIf="order.room">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Room No.</ion-col>
+          <ion-col font-bold>{{ order.room }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
     <ion-item>
       <ion-grid>
         <ion-row>
@@ -66,8 +74,8 @@
     </ion-item>
   </ion-list>
 
-  <h3 class="title">Notes</h3>
-  <ion-list no-lines font-bold>
+  <h3 class="title" *ngIf="order.notes">Notes</h3>
+  <ion-list no-lines font-bold *ngIf="order.notes">
     <ion-item>
       {{ order.notes }}
     </ion-item>

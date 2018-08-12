@@ -28,6 +28,14 @@
         </ion-row>
       </ion-grid>
     </ion-item>
+    <ion-item *ngIf="order.room">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Room No.</ion-col>
+          <ion-col font-bold>{{ order.room }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
     <ion-item>
       <ion-grid>
         <ion-row>

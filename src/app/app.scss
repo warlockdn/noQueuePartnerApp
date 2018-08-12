@@ -103,6 +103,10 @@ ion-list {
                     position: relative;
                     top: 2px;
                 }
+                .extra {
+                    font-weight: 700;
+                    color: map-get($map: $colors, $key: red)
+                }
             }
             .price {
                 font-size: 1.4rem;
@@ -160,6 +164,10 @@ ion-list {
                 margin-right: 0.5rem;
                 position: relative;
                 top: 2px;
+            }
+            .extra {
+                font-weight: 700;
+                color: map-get($map: $colors, $key: red)
             }
         }
         .price {
