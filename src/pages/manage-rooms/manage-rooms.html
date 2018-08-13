@@ -1,0 +1,66 @@
+<!--
+  Generated template for the ManageRoomsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="red">
+    <ion-title>Manage Rooms</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="refreshBookingsIcon()" style="font-size: 1.6em;">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button ion-button (click)="checkin()" style="font-size: 1.6em;">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refreshBookings($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <div class="empty" text-center>
+    No check in's yet!
+  </div> -->
+
+  <ion-searchbar (ionInput)="filterRooms($event)" placeholder="Search Room No."></ion-searchbar>
+
+  <ion-card (press)="actions(booking.customerID)" class="list" *ngFor="let booking of hotelProvider.bookings">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row header>
+          <ion-col col-2>Room</ion-col>
+          <ion-col>Name</ion-col>
+          <ion-col col-4>Duration</ion-col>
+        </ion-row>
+        <ion-row body>
+          <ion-col col-2 font-bold room>{{ booking.room }}</ion-col>
+          <ion-col>{{ booking.name }}</ion-col>
+          <ion-col col-4>{{ booking.checkInTime | date: "MMM d" }} - {{ booking.checkOutTime | date: "MMM d" }}</ion-col>
+        </ion-row>
+      </ion-grid>  
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar no-padding>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-padding>
+          <button no-margin block ion-button color="secondary" (click)="checkin()">
+            Check In
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>    
+  </ion-toolbar>
+</ion-footer>

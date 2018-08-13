@@ -194,3 +194,12 @@ ion-list {
     font-size: 0.7em;
     margin-top: 0.5rem; 
 }
+
+ion-footer {
+    ion-toolbar.toolbar-md {
+        min-height: 0;
+        button[ion-button] {
+            border-radius: 0;
+        }
+    }
+}

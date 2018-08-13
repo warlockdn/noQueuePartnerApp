@@ -32,11 +32,16 @@ import { DeliveredPage } from '../pages/delivered/delivered';
 import { OrderDetailPage } from '../pages/order-detail/order-detail';
 import { DeliveredDetailPage } from '../pages/delivered-detail/delivered-detail';
 
+import { ManageRoomsPage } from '../pages/manage-rooms/manage-rooms';
+import { CustomerRegisterPage } from '../pages/manage-rooms/customer-register/customer-register';
+import { CheckinPage } from '../pages/manage-rooms/checkin/checkin';
+
 import { AuthProvider } from '../providers/auth/auth';
 import { CommonProvider } from '../providers/common/common';
 import { InterceptorProvider } from '../providers/interceptor/interceptor';
 import { ConstantsProvider } from '../providers/constants/constants';
 import { OrderProvider } from '../providers/order/order';
+import { HotelsProvider } from '../providers/hotels/hotels';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,10 @@ import { OrderProvider } from '../providers/order/order';
     InProcessPage,
     DeliveredPage,
     OrderDetailPage,
-    DeliveredDetailPage
+    DeliveredDetailPage,
+    ManageRoomsPage,
+    CustomerRegisterPage,
+    CheckinPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +77,10 @@ import { OrderProvider } from '../providers/order/order';
     InProcessPage,
     DeliveredPage,
     OrderDetailPage,
-    DeliveredDetailPage
+    DeliveredDetailPage,
+    ManageRoomsPage,
+    CustomerRegisterPage,
+    CheckinPage
   ],
   providers: [
     StatusBar,
@@ -79,7 +90,8 @@ import { OrderProvider } from '../providers/order/order';
     AuthProvider,
     CommonProvider,
     ConstantsProvider,
-    OrderProvider
+    OrderProvider,
+    HotelsProvider
   ]
 })
 export class AppModule {}

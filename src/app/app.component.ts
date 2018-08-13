@@ -7,7 +7,10 @@ import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 
+import { ManageRoomsPage } from '../pages/manage-rooms/manage-rooms';
+
 import { AuthProvider } from '../providers/auth/auth';
+import { ConstantsProvider } from '../providers/constants/constants';
 
 
 @Component({
@@ -25,6 +28,7 @@ export class MyApp {
     public events: Events,
     private storage: Storage, 
     private auth: AuthProvider,
+    private constants: ConstantsProvider
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

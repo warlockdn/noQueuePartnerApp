@@ -11,8 +11,14 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class ConstantsProvider {
 
-  public static auth = "http://localhost:3003/p1/auth/login";
-  public static order = "http://localhost:3003/p1/orders";
+  public static auth = "http://192.168.31.190:3003/p1/auth/login";
+  public static order = "http://192.168.31.190:3003/p1/orders";
+  public static bookings = "http://192.168.31.190:3003/p1/bookings";
+  public static rooms = "http://192.168.31.190:3003/p1/rooms";
+  public static findCustomer = "http://192.168.31.190:3003/p1/customer/findCustomer";
+  public static registerCustomer = "http://192.168.31.190:3003/p1/customer/registerCustomer";
+  public static checkIn = "http://192.168.31.190:3003/p1/customer/checkIn";
+  public static checkOut = "http://192.168.31.190:3003/p1/customer/checkOut";
 
   // public static auth = "https://cs.spazefood.xyz/p1/auth/login";
   // public static order = "https://cs.spazefood.xyz/p1/orders";
@@ -23,6 +29,7 @@ export class ConstantsProvider {
     console.log('Hello ConstantsProvider Provider');
     this.getToken().then((token) => {
       if (token) {
+        console.log(token);
         this.token = token;
       }
     })

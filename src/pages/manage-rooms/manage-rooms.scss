@@ -1,0 +1,27 @@
+page-manage-rooms {
+
+    .list {
+        .card-content-md {
+            padding: 10px;
+            ion-grid {
+                padding: 0;
+                ion-row[header] {
+                    ion-col {
+                        font-size: 1.2rem;
+                        padding: 0 5px;
+                        color: #808080;
+                    }
+                }
+                ion-row[body] {
+                    ion-col {
+                        padding: 0 5px;
+                        &[room] {
+                            color: map-get($map: $colors, $key: red);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
